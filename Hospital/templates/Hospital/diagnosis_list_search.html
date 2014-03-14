@@ -1,0 +1,63 @@
+ {% extends "Hospital/doctpagebase.html" %} 
+{% block content %}
+<p> You search for: {{term}} </p> 
+
+<div class="row">
+
+
+    <div class="span12"> 
+<p><h2 align=center><img src="/static/img/stethoscope.jpg" width="100px" height="100px" title="we build,we deliver"/>Registered Patients Diagnosis List&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2></p>
+      <table border = 5 cellpadding = 0 cellspacing = 0 class = "table table-bordered" align='center' style="color:black; background-color:#CCCCCC 
+;">
+	       <th > Patient  OPD Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>	
+	       <th > Diagnosis ID &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+	       <th >Diagnosis Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>          
+               <th > Diagnosis Majorcomplaints &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+	       <th > Diagnosis Details&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th > Doctor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th > Edit Diagnosis Details&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+	       
+                     
+                       <tr>
+{% for eachdiagnosis in diagnosis_list %} 
+<td >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{{eachdiagnosis.patient }}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+ <td >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{{eachdiagnosis.Diagnosis_ID}}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td >
+{{eachdiagnosis.Diagnosis_date}}&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td >
+{{eachdiagnosis.Diagnosis_Majorcomplaints}}
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td >
+{{eachdiagnosis.Diagnosis_Details}}
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td >
+{{eachdiagnosis.doctor.first_name}}&nbsp;&nbsp;&nbsp;&nbsp; {{eachdiagnosis.doctor.last_name}}
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td >
+{% if user.email == eachdiagnosis.doctor.email%}
+<a href="/particular_patient_diagnosis/{{eachdiagnosis.id}}/edit"><button class="btn btn-warning"> <i class="icon-edit"></i>Edit Diagnosis </button></a>
+{% endif %}</td>
+
+
+
+					  <!--<td ></td>-->
+</tr>
+					  
+       {% endfor %}
+     </table>
+
+     </div>
+     </div>
+
+{% endblock %}
+

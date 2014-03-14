@@ -1,0 +1,19 @@
+
+<!-- this is a child template of the base html -->
+
+{% extends "Hospital/registrar_pagebase.html" %}
+{% block title  %}Nurse Registration Page{% endblock %}
+{% block content %}
+
+
+<h3 style="color:Maroon "> NURSE REGISTRATION FORM &nbsp;&nbsp;&nbsp;<img src="/static/img/add.png" width="30px" height="30px" title="we build,we deliver"/></h3>
+<form method='post'>
+
+
+    {{ form.as_p }}
+
+    <input type="submit" value="Submit!">
+</form>
+
+
+{% endblock %}

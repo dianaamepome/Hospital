@@ -1,0 +1,43 @@
+{% extends "Hospital/doctpagebase.html" %}
+{% block content %}
+<p> You search for: {{term}} </p> 
+<div class="row">
+    <div class="span12"> 
+<p><h2 align=center><img src="/static/img/calendar_128.png" width="100px" height="100px" title="we build,we deliver"/>Registered Patient Reviewal List&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2></p>
+      <table border = 5 cellpadding = 0 cellspacing = 0 class = "table table-bordered" align='center' style="color:black; background-color:#CCCCCC 
+;">
+	        <th > Patient  OPD Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>	
+	       <th > Reviewals ID &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+	       <th >Reviewals Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th > Doctor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>          
+               <th >Edit Reviewals &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                      
+                       <tr>
+{% for eachreviewal in reviewal_list %}
+<td >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{{eachreviewal.patient.ODP_number }}</td>
+ <td >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href=" "/> {{eachreviewal.id}}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{{eachreviewal.Reviewals_Date}}&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+
+<td >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{{eachreviewal.doctor.first_name}}&nbsp;&nbsp;&nbsp;&nbsp; {{eachreviewal.doctor.last_name}}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{% if user.email == eachreviewal.doctor.email%}
+<a href="/particular_patient_reviewal/{{eachreviewal.id}}/edit"><button class="btn btn-warning"> <i class="icon-edit"></i>Edit Reviewals </button></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+{% endif%}					  <!--<td ></td>-->
+</tr>
+					  
+       {% endfor %}
+     </table>
+
+     </div>
+     </div>
+
+{% endblock %}
+

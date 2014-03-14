@@ -1,0 +1,115 @@
+<!-- parent template  -->
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<title>{% block title  %}COLLABORATIVE HEALTHCARE {% endblock %}</title>
+<link href="/static/bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet">
+<link href="/static/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
+<link href="/static/bootstrap/docs/assets/css/docs.css" rel="stylesheet">
+<link href="/static/bootstrap/docs/assets/js/google-code-prettify-prettify.css" rel="stylesheet">
+<style>#first-row {text-align:left}
+.center {text-align:center}
+#Search-second {text-align:right}
+.row {border:2px}</style>
+<script>
+$('.carousel').carousel()
+</script>
+</head>
+
+<body>
+<div class="container">
+<!-- Masthead
+=============================================== -->
+ <header class="jumbotron subhead" >
+  <div class="row" id = "first-row">
+    <div class="span10">
+      <h2 class="prettyprint linenums">COLLABORATIVE HEALTHCARE SYSTEM</h2>
+      <br>
+    </div>
+  </div>
+  <hr/>
+  <div class="row">
+    <div class="span6">
+      <p class="lead"><i>Engaging Patients in Active Healthcare</i></p>
+    </div>
+    <div class="span6" id="Search-second">
+      <input type="text"/>
+      Search
+    </div>
+  </div>
+  <div class="subnav">
+    <ul class="nav nav-pills">
+
+
+      <li><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;About Us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+      <li><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;News and Events&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+      
+      <li><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Photo Gallery&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+      <li>
+<a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FAQ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+
+    </ul>
+  </div>
+<header>
+<hr />
+
+{% block content %}
+  
+  <div class="row">
+<div class="span4">
+<img src="/static/img/3.jpg" width="600px" height="355px" title="we build,we deliver"/>
+</div>
+    <div class="span8">
+           <div class="well">
+            <ul class="nav nav-list">
+            <li><a href="">Enter Diagnosis </a></li>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <li><a href="">Enter Prescription</a></li>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <li><a href=""> Enter Reviewals</a></li>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <li><a href="">Enter Lab Tests </a></li>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  
+           </ul>
+
+           </div>
+
+  </div>
+  </div>
+     <!--/.well -->
+ 
+
+{% endblock %}
+<!-- Footer
+=============================================== -->
+
+<div class="logout-form">              
+                  <a href="/healthprovider/logout" a><button style="float :right;" class="btn btn-danger"><i class="icon-user" >&nbsp</i>LOGOUT<i class="icon"></i> </button>&nbsp&nbsp</a>
+              </div>
+<footer class="footer">
+<div class="row">
+<div class="span4">
+
+  </div>
+  <div class="span4">
+    <p><a href="#ContactUs">Contact Us</a></p>
+    {% block footeradd1 %}
+    {% endblock %}
+  </div>
+  <div class="span4">
+    <p ><a href="#Location">Location</a></p>
+    {% block footeradd2 %}
+    {% endblock %}
+  </div>
+  
+</div>
+    <br/>
+    <p class="center">Copyright 2013, Collaborative Healthcare System</p>
+
+</footer>
+</div>

@@ -1,0 +1,31 @@
+from django.forms import ModelForm
+from django.db import models
+from django.contrib import admin
+from django.contrib.auth.models import User
+from datetime import datetime
+
+class Patient(models.Model):
+      user = models.OneToOneField(User, unique=True)
+      ODP_number = models.IntegerField(max_length = 10)
+      first_name = models.CharField(max_length = 255)
+      last_name = models.CharField(max_length = 255)
+      GENDER_CHOICES = (('Male','Male'),('Female','Female'),)
+      gender = models.CharField(max_length=6,choices=GENDER_CHOICES)
+      date_of_birth = models.DateField(default = "DD-MM-YYYY")
+      age= models.IntegerField(max_length = 2)
+      Occupation = models.CharField(max_length = 255)
+      phone_number = models.IntegerField(max_length = 10)
+      email = models.EmailField()
+      Address= models.CharField(max_length = 255)
+      country = models.CharField(max_length = 255)
+      city= models.CharField(max_length = 255) 
+      special_requirements= models.CharField(max_length = 255)    
+      def __unicode__(self):
+            return str(self.ODP_number)
+
+class PatientAdmin(admin.ModelAdmin):
+    list_display=('gender','ODP_number','phone_number','first_name','last_name')
+    search_fields =('ODP_number','last_name','first_name')
+    list_filter =('ODP_number',)
+
+admin.site.register(Patient,PatientAdmin)

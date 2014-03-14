@@ -1,0 +1,52 @@
+{% extends "Hospital/patientpage_base.html" %}
+{% block content %}
+<h2 class="prettyprint linenums" align='center' >
+
+RECEIVED REPORTS FROM DOCTOR</h2>
+
+
+<div class="row">
+    <div class="span12"> 
+      <table border = 5 cellpadding = 0 cellspacing = 0 class = "table table-bordered" align='center' style="color:black; background-color:#CCCCCC 
+;">
+	       <th > Doctor ID &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+	       <th > Doctor Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+	                
+               <th > Date Sent &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th >Title&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th> 
+	       <th > Report Sent&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                       {% for r in comment_list %} 
+                       {% if user.email == r.patient.email%}
+                       <tr>
+ <td >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href= ""/> {{ r.doctor.Doctor_ID }}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+ <td >
+{{ r.doctor.first_name }}&nbsp;&nbsp;&nbsp;&nbsp;{{ r.doctor.last_name }}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+
+<td >
+{{ r.Datecreated }}
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td >
+{{ r.title}}&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td >
+{{ r.body }}
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+{% endif %}
+{% endfor %}
+</tr>
+
+    </table> 
+
+           </ul>
+
+     <!--/.well -->
+  </div>
+     </div>
+
+{% endblock %}
+

@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<title>{% block title  %}Patient Page{% endblock %}</title>
+<link href="/static/bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet">
+<link href="/static/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
+<link href="/static/bootstrap/docs/assets/css/docs.css" rel="stylesheet">
+<link href="/static/bootstrap/docs/assets/js/google-code-prettify-prettify.css" rel="stylesheet">
+<style>#first-row {text-align:left}
+.center {text-align:center}
+#Search-second {text-align:right}
+.row {border:2px}</style>
+<script>
+$('.carousel').carousel()
+</script>
+</head>
+
+<body>
+<div class="container">
+
+ <header class="jumbotron subhead" >
+  <div class="row" id = "first-row">
+    <div class="span12">
+     <img src="/static/img/f.png" width="2000px" height="120px" title="we build,we deliver"/>
+      <br>
+    </div>
+  </div>
+  <hr/>
+  <div class="row">
+    <div class="span6">
+      
+<h2 class="prettyprint linenums" >
+
+Patient's Page</h2>
+    </div>
+
+    <div class="span6" id="Search-second">
+      <input type="text"/>
+      Search
+    </div>
+  </div>
+  <div class="subnav">
+    <ul class="nav nav-pills">
+
+
+      <li><a href="/patient_page">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</a></li>
+<li>
+<a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Photo Gallery&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;
+</a></li>
+<li><a href="/patientpost_report ">Send  Reports to Doctor </a></li>
+      
+     <li><a href="/healthfacility_list">Registered Health Facilities</a></li>
+      
+      <li><a href="doctor_list">Registered Doctor List </a></li>
+
+<button style="float :right;" class="btn"><i class="icon-user" >
+</i>Welcome,{{user.username}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="icon"></i> </button>
+<a href="/healthprovider/logout"><button style="float :right;" class="btn btn-danger"><i class="icon-user" ></i>Logout<i class="icon"></i> </button></a>
+    </ul>
+  </div>
+<header>
+<hr />
+<ul class="nav nav-tabs">
+<li class="active">
+    <a href="/particular_viewvitals ">VIEW VITALS</a>
+  </li>
+  <li class="active">
+   <a href="/patientpage_diagnosislist">VIEW DIAGNOSIS</a>
+  </li>
+ <li class="active">
+    <a href="/patientpage_prescriptionlist">VIEW PRESCRIPTION</a>
+  </li>
+<li class="active">
+    <a href="/patientpage_labtestlist">VIEW LAB TESTS</a>
+  </li>
+<li class="active">
+    <a href="/patientpage_reviewallist">VIEW REVIEWALS</a>
+  </li>
+
+<li class="active">
+    <a href="/patientreceivedcomment_list">VIEW DOCTORS COMMENT</a>
+  </li>
+<li class="active">
+    <a href="/report_list">VIEW SENT REPORT</a>
+  </li>
+
+</ul>
+
+{% block content %}
+{% endblock %}
+<!-- Footer
+=============================================== -->
+<footer class="footer">
+<div class="row">
+  <div class="span4">
+    <p><a href="#ContactUs">Contact Us</a></p>
+    {% block footeradd1 %}
+    {% endblock %}
+  </div>
+  <div class="span4">
+    <p ><a href="#Location">Location</a></p>
+    {% block footeradd2 %}
+    {% endblock %}
+  </div>
+  
+</div>
+    <br/>
+    <p class="center">Copyright 2013, Collaborative Healthcare System</p>
+
+</footer>
+</div>
+
+

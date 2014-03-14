@@ -1,0 +1,19 @@
+<!-- this is a child template of the base html -->
+
+{% extends "Hospital/doctpagebase.html" %}
+{% block title  %}Report Page{% endblock %}
+{% block content %}
+
+
+<h3 style="color:Maroon ">SEND REPORT TO PATIENT:&nbsp;&nbsp;&nbsp; </h3>
+<form method='post'>
+
+
+    {{ form.as_p }}
+
+<input type="submit" value="Submit!" ></a>
+</form>
+
+
+
+{% endblock %}

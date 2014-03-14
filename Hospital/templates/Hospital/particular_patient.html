@@ -1,0 +1,96 @@
+
+{% extends "Hospital/doctpagebase.html" %}
+{% block content %}
+
+  <div class="row">
+<div class="span4">
+<img src="/static/img/5.jpg" width="600px" height="460px" title="we build,we deliver"/>
+</div>
+<p><font size="5" face="Georgia, Arial" color="grey"><b><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PERSONAL INFORMATION<img src="/static/img/patient_icon_128.png" width="50px" height="50px" title="we build,we deliver"/></p></b></font></p>
+ <div class="span8">
+           <div class="well">
+            <ul class="nav nav-list">
+<table border = 0 cellpadding  =0 cellspacing =0 class = "list">
+
+      <tr>
+        <td  height="35" width ="200">OPD NUMBER:</td>
+        <td>{{ patient.ODP_number }}</td>
+      </tr>
+      <tr>
+        <td height="35">SURNAME:</td>
+        <td>{{ patient.last_name}}</td>
+        <td height="35">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OTHER NAMES:</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{patient.first_name }}</td>
+      </tr>
+      
+<tr>
+        <td height="35">GENDER:</td>
+        <td>{{patient.gender}}</td>
+        <td height="35">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OCCUPATION:</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{patient.Occupation }}</td>
+      </tr>
+      <tr>
+        <td height="35">DATE OF BIRTH:</td>
+        <td>{{patient.date_of_birth }}</td>
+        
+</tr>
+        
+<tr>
+        <td height="35">EMAIL:</td>
+        <td>{{patient.email}}</td>
+        <td height="35">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ADDRESS:</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{patient.Address }}</td>
+      </tr>
+<tr>
+        
+        <td height="35">COUNTRY:</td>
+        <td>{{patient.country }}</td>
+        <td height="35">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CITY:</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{patient.city }}</td>
+      </tr>
+<tr>
+        <td height="35">SPECIAL REQUIREMENT:</td>
+        <td>{{patient.special_requirements }}</td>
+      </tr>
+<tr>
+
+</tr>
+<tr>
+        <td height="35"><a href="/particular_Vitals/{{patient.ODP_number}}/True">VIEW VITALS</a></td>
+     
+      </tr>
+
+<tr>
+        <td height="35"><a href="/particular_patient_diagnosis/{{patient.ODP_number}}/True/">VIEW DIAGNOSIS</a></td>
+
+<td height="50"><a href="/particular_viewpres/{{patient.ODP_number}}/True">VIEW PRESCRIPTION</a></td>
+      </tr>
+
+
+<tr>
+        <td height="35"><a href="/particular_viewlab/{{patient.ODP_number}}/True">VIEW LAB TESTS</a></td>
+
+<td height="35"><a href="/particular_viewreview/{{patient.ODP_number}}/True">
+
+VIEW REVIEWALS</a></td>
+
+        
+      </tr>
+
+
+    </table></ul>
+ 
+</div>
+
+                  
+           </ul>
+
+           </div>
+
+  </div>
+  </div>
+     <!--/.well -->
+ 
+
+{% endblock %}
+

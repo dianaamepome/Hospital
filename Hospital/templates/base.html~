@@ -1,0 +1,7 @@
+{% for a in posts %}
+<h2>{{ a.first_name}}</h2>
+<p>{{ a.last_name }}</p>
+<p>{{ a.gender }}</p>
+{% endfor %}
+
+

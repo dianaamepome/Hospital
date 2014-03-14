@@ -1,0 +1,22 @@
+<!-- this is a child template of the base html -->
+
+{% extends "hospital/base.html" %}
+{% block title  %}Doctor Registration{% endblock %}
+{% block content %}
+
+
+<h3 style="color:Maroon "> DOCTOR REGISTRATION FORM </h3>
+<form enctype="multipart/form-data" action="{{ reg.get_absolute_url }}" method='post'>
+
+
+    {{ form.as_p }}
+
+    <input type="submit" value="Submit!">
+</form>
+<br /><br />
+<!{% for a in studreserve %}
+<a href="{{ a.get_absolute_url }}" ><h3 style="color:#A52A2A"> REGISTER FOR AVAILABLE ROOMS</h3>  </a>
+
+{% endfor %}
+
+{% endblock %}

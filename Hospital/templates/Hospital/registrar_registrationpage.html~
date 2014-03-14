@@ -1,0 +1,18 @@
+<!-- this is a child template of the base html -->
+
+{% extends "Hospital/base.html" %}
+{% block title  %Administrator Registration{% endblock %}
+{% block content %}
+
+
+<h3 style="color:Maroon ">ADMINISTRATOR  REGISTRATION FORM </h3>
+<form method='post'>
+
+
+    {{ form.as_p }}
+
+    <input type="submit" value="Submit!">
+</form>
+<br /><br />
+
+{% endblock %}

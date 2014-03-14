@@ -1,0 +1,45 @@
+{% extends "Hospital/base.html" %}
+{% block content %}
+<div class="login-form">              
+                  <a href="/healthprovider/login" a><button style="float :right;" class="btn btn-danger"><i class="icon-user" >&nbsp</i>LOGIN<i class="icon"></i> </button>&nbsp&nbsp<a href="doctorreg"><h4><p align=right>Signup</p></h4></a> </a>
+              </div>
+
+<div align="center">
+
+    <div class="span12">
+ 
+         <div class="item active">
+           <div class="well">
+             <ul class="nav nav-list">
+
+
+                <img src="/static/img/2.jpeg" alt="" height="300" width="800" align="center" ><h3>
+
+                <div class="contactus-caption">
+                 
+                </div>
+              </div>
+            
+    </div>
+  </div>
+</div>
+  
+<h3 align='center'>Collaborative HealthCare System</h3>
+<p><font size="4" face="Georgia, Arial" color="grey"><b>
+
+<p align='center'>Tel: &nbsp;&nbsp;+233 543896199</p>
+<p align='center'>Email:&nbsp;&nbsp;CollaborativeHealthCareSystem@gmail.com</p><font size="3px"><b>
+<p align='center'>If you have a question about Collaborative HealthCare System, about how to use our site, have feedback to help us improve, have noticed a problem in our search results, or are seeking information on any of our services, you can write in to us using our email address. We respond to all queries we get. 
+</b></font></p>
+
+
+ 
+
+
+{% endblock %}
+
+
+
+
+
+

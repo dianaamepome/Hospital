@@ -1,0 +1,55 @@
+{% extends "Hospital/doctpagebase.html" %}
+{% block content %}
+<p> You search for: {{term}} </p> 
+<ul>
+<div class="row">
+    <div class="span12"> 
+<p><h2 align=center><img src="/static/img/pills.png" width="50px" height="50px" title="we build,we deliver"/>Registered Patient Prescription List&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2></p>
+      <table border = 5 cellpadding = 0 cellspacing = 2 class = "table table-bordered" align='center' style="color:black; background-color:#CCCCCC 
+;">
+		<th > Patient  OPD Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>	
+	       <th > Prescription ID &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+	       <th >Prescription Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>          
+               <th >  Prescription Details  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+	       <th > Medicine Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+	       <th > Medicine Doseage&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th > Doctor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th >Edit Prescription Details&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>     
+                       <tr>
+ {% for eachprescription in prescription_list %} 
+<td >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href=" ">{{eachprescription.patient.ODP_number }}</td>
+ <td >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ {{eachprescription.id}}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td >
+{{eachprescription.Prescription_date}}&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td >
+{{eachprescription.Prescription_Details}}
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td >
+{{eachprescription.Medicine_Name}}
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td >
+{{eachprescription.Medicine_Doseage}}					      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td >
+{{eachprescription.doctor.first_name}}&nbsp;&nbsp;&nbsp;&nbsp; {{eachprescription.doctor.last_name}}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td >	
+{% if user.email == eachprescription.doctor.email%}
+<a href="/particular_patient_prescription/{{eachprescription.id}}/edit"><button class="btn btn-warning"> <i class="icon-edit"></i>Edit Prescription </button></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+{% endif%}
+</tr>
+  {% endfor %} 
+    </table>
+
+     </div>
+     </div>
+
+{% endblock %}
+

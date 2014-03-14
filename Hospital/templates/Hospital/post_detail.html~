@@ -1,0 +1,31 @@
+{% extends "Hospital/doctpagebase.html" %}
+{% block content %}
+
+<div style="color:blue">
+<h3>REPORTS</h3>
+</div>
+{% for c in reports %}
+	
+<h3> {{ c.body }} </h3>
+<p2> Datecreated:  {{ c.Datecreated}}</p2>
+ 
+<p2> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Dateupdated:  {{ c.Dateupdated }}</p2> 
+
+{% endfor %}
+
+<div style="color:blue">
+<h3> New Report</h3>
+</div>
+<div>
+
+<form method='post' action="">
+{{ form.as_p }}  
+<input type='submit' name='Submit'>
+</form>
+</div>
+{% endblock %}
+
+

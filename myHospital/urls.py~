@@ -1,0 +1,10 @@
+from django.conf.urls.defaults import *
+
+urlpatterns = patterns('',
+    urlpatterns = patterns('',
+    url(r'^$', 'myHospital.views.home'),
+    url(r'^homepage/$', 'myHospital.views.frontpage'),
+    url(r'^patient_page/$', 'myHospital.views.patient_page'),
+    url(r'^homepage/doctorreg$','myHospital.views.doctorreg'),
+    url(r'^homepage/contact_us$','myHospital.views.contact_us'),
+)

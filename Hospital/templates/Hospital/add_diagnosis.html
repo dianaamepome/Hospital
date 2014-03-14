@@ -1,0 +1,20 @@
+
+<!-- this is a child template of the base html -->
+
+{% extends "Hospital/doctpagebase.html" %}
+{% block title  %}Add Diagnosis Page{% endblock %}
+{% block content %}
+
+
+<h3 style="color:Maroon ">PATIENT  DIAGNOSIS FORM&nbsp;&nbsp;&nbsp;<img src="/static/img/add.png" width="30px" height="30px" title="we build,we deliver"/> </h3>
+<form method='post'>
+
+
+    {{ form.as_p }}
+
+<input type="submit" value="Submit!" ></a>
+</form>
+
+
+
+{% endblock %}
